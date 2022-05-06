@@ -1,0 +1,54 @@
+{
+    "name": "AddressablesCubesInputActions",
+    "maps": [
+        {
+            "name": "Default",
+            "id": "7a27bb86-17ad-4240-b69b-012a8c903e8c",
+            "actions": [
+                {
+                    "name": "Instantiate Cube",
+                    "type": "Button",
+                    "id": "2249b6de-85c1-4897-9dd1-16c48bc67d64",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Change All Colors",
+                    "type": "Button",
+                    "id": "4c84e603-9ae2-4ef1-9298-4d1d5c3f2a23",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d7ee4619-e4f6-4c42-87cd-e10e5c04de1a",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Instantiate Cube",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d74f3c0a-b07f-4e93-88a1-bb7485fb7765",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Change All Colors",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
