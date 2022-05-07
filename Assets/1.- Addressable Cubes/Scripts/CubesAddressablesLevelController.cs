@@ -175,33 +175,4 @@ public class CubesAddressablesLevelController : MonoBehaviour
                 return (Material)handleRedMaterial.Result;
         }
     }
-
-    /*
-    private int GetRandomColor(Material actualMaterial)
-    {
-        if(actualMaterial != null && actualMaterial != materialsList[lastColor])
-        {
-            auxRandom = materialsList.ToList<Material>().FindIndex(mat => materialsList.ToList<Material>().IndexOf(mat) != lastColor && mat != actualMaterial);
-        }
-        else
-        {
-            if (lastColor == -1)
-            {
-                auxRandom = UnityEngine.Random.Range(0, 3);
-            }
-            else
-            {
-                auxRandom = UnityEngine.Random.Range(0, 2);
-
-                if (auxRandom >= lastColor)
-                {
-                    auxRandom++;
-                }
-            }
-        }
-
-        lastColor = auxRandom;
-        return auxRandom;
-    }
-    */
 }
