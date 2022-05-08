@@ -25,12 +25,12 @@
                 },
                 {
                     "name": "Jump",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "0ed477ea-cadc-4ead-a59c-23bba528df16",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -39,7 +39,7 @@
                     "id": "9296d0ef-1b07-4677-a0e4-4523c66fadfc",
                     "path": "2DVector(mode=2)",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "NormalizeVector2",
                     "groups": "",
                     "action": "Move",
                     "isComposite": true,
