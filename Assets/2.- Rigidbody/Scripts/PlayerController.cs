@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Cinemachine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class PlayerController : MonoBehaviour
     public float gravity = 1000;
     public float velocity = 400;
     public float breakFactor = 4;
-    public float mouseSensibility = 10;
     public float jumpForce = 1000;
     public float fixedVelocityOnWall = 5f;
     public float maxVelocity = 30f, maxFallVelocity = 50f;
@@ -20,11 +20,16 @@ public class PlayerController : MonoBehaviour
 
     public CinemachineFreeLook freeLookCamera;
 
+    public Slider sensitivitySlider;
+    public AnimationCurve sensitivityCurve;
+
     public ParticleSystem floorEffects, jetpackEffects, jumpEffects;
     public TrailRenderer wallEffects;
 
     private Vector2 auxVector2;
     private float inputForward, inputLateral;
+
+    private float mouseSensitivity;
 
     private Vector3 calculatedVelocity;
     private Vector3 playerForward, playerRight;
@@ -46,6 +51,8 @@ public class PlayerController : MonoBehaviour
         ignorePlayer = ~LayerMask.GetMask("Player");
 
         rigidbodyLastDirection = this.transform.forward;
+
+        mouseSensitivity = sensitivityCurve.Evaluate(sensitivitySlider.value);
     }
 
     private void Update()
@@ -234,7 +241,12 @@ public class PlayerController : MonoBehaviour
     {
         auxVector2 = value.Get<Vector2>();
 
-        freeLookCamera.m_XAxis.m_InputAxisValue = -auxVector2.x * mouseSensibility;
-        freeLookCamera.m_YAxis.m_InputAxisValue = -auxVector2.y * mouseSensibility;
+        freeLookCamera.m_XAxis.m_InputAxisValue = -auxVector2.x * mouseSensitivity;
+        freeLookCamera.m_YAxis.m_InputAxisValue = -auxVector2.y * mouseSensitivity;
+    }
+
+    public void _OnSensityvitySliderChange(float value)
+    {
+        mouseSensitivity = sensitivityCurve.Evaluate(value);
     }
 }
