@@ -1,0 +1,45 @@
+{
+    "name": "UIActions",
+    "maps": [
+        {
+            "name": "Default",
+            "id": "4652d148-bdca-48b7-ab4a-15c1a12d4f0e",
+            "actions": [
+                {
+                    "name": "ChangeOptions",
+                    "type": "Button",
+                    "id": "11f48d88-be00-4281-a147-de30f7b72de2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cd5c8535-573c-4565-897b-3c5d3acd4c9c",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeOptions",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f4da2596-bec9-4646-8db6-06336b6c25f4",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeOptions",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
