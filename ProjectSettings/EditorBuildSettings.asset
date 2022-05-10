@@ -6,10 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/3. UI.unity
+    guid: 18830b7745f64984fa369e6499e3966b
+  - enabled: 1
+    path: Assets/Scenes/1. Addressable Cubes.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
     path: Assets/Scenes/2. Rigidbody.unity
     guid: 5c8b36df15fd65a4baa290a544bb09ab
   - enabled: 1
-    path: Assets/Scenes/1. Addresable Cubes.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/4. Editor.unity
+    guid: 1d653a34cb8a4ba489cec5143faed9cf
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 8548edaffb341f94fbff5dce7eaa73ca, type: 2}
