@@ -4,120 +4,46 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class PrefabBox : EditorWindow
 {
-    public List<GameObject> objectList = new List<GameObject>();
-    public GameObject singleObject;
+    private GameObject prefab;
 
-    private List<GUILayout> buttons;
-    private bool clickInstant;
+ 
 
-    private InputAction click;
-    
-    [MenuItem("Window/PrefabBox")]
-    static void Init()
+    [MenuItem("Window/MyWindow")]
+    private static void ShowWindow()
     {
-        PrefabBox window = (PrefabBox)EditorWindow.GetWindow(typeof(PrefabBox));
+        GetWindow<PrefabBox>("MyWindow");
     }
 
-    private void OnGUI()
+    private void OnEnable()
     {
-        EditorGUILayout.BeginHorizontal();
+        var box = new VisualElement();
+        box.style.backgroundColor = Color.gray;
+        box.style.flexGrow = 1f;
 
-        int cont = 0;
-        foreach(GameObject t in objectList.ToArray())
+        box.RegisterCallback<MouseDownEvent>(evt =>
         {
-            if(t == null)
+            DragAndDrop.PrepareStartDrag();
+            DragAndDrop.StartDrag("Dragging");
+            if(prefab != null)
             {
-                objectList.Remove(t);
+                DragAndDrop.objectReferences = new Object[] { prefab };
             }
-            else
-            {
-                GUILayout.Label(
-                    AssetPreview.GetAssetPreview(t),
-                    GUILayout.MinHeight(this.position.size.y / 5f),
-                    GUILayout.MaxHeight(this.position.size.y / 5f),
-                    GUILayout.MinWidth(this.position.size.x / 5f),
-                    GUILayout.MaxWidth(this.position.size.x / 5f)
-                );
-                /*
-                {
-                    clickInstant = true;
+        });
 
-                    DragAndDrop.PrepareStartDrag();
-                    DragAndDrop.objectReferences = new GameObject[] { t };
-                    DragAndDrop.StartDrag("test");
-                }
-                */
-            }
-
-            BlackMagic();
-
-            cont++;
-
-            if(cont % 5 == 0)
-            {
-                EditorGUILayout.EndHorizontal();
-                EditorGUILayout.BeginHorizontal();
-            }
-        }
-
-        singleObject = (GameObject)EditorGUILayout.ObjectField(
-            singleObject,
-            typeof(GameObject),
-            true,
-            GUILayout.MinHeight(this.position.size.y / 5f),
-            GUILayout.MaxHeight(this.position.size.y / 5f),
-            GUILayout.MinWidth(this.position.size.x / 5f),
-            GUILayout.MaxWidth(this.position.size.x / 5f)
-        );
-
-        if (singleObject != null)
+        box.RegisterCallback<DragUpdatedEvent>(evt =>
         {
-            if (PrefabUtility.GetCorrespondingObjectFromSource(singleObject) == null && PrefabUtility.GetPrefabObject(singleObject) != null)
-            { 
-                objectList.Add(singleObject);
-            }
+            DragAndDrop.visualMode = DragAndDropVisualMode.Move;
+        });
 
-            singleObject = null;
-        }
-
-        EditorGUILayout.EndHorizontal();
-    }
-
-    private void BlackMagic()
-    {
-        if (Event.current.type == EventType.Layout) return;
-        // Without this you cant get mouse up events dont know why, it also prevents unity to handle some inputs so dont handle layout events otherwise you can move the selected object but cant select a different one
-        HandleUtility.AddDefaultControl(-1);
-
-        var e = Event.current;
-
-        // Prevents duplicate key and mouse events
-        if (e.isMouse || e.isKey)
+        box.RegisterCallback<DragExitedEvent>(evt =>
         {
-            if (e.commandName == "Used")
-            {
-                return;
-            }
-            e.commandName = "Used";
-        }
+            prefab = (GameObject)DragAndDrop.objectReferences[0];
+        });
 
-        if(e.type == EventType.MouseDrag || e.type == EventType.MouseDown)
-        {
-            Debug.Log("entra");
-            Physics.Raycast(e.mousePosition, 
-
-            //DragAndDrop.visualMode = DragAndDropVisualMode.Move;
-
-            //DragAndDrop.StartDrag("test");
-            clickInstant = false;
-        }
-
-        if (e.type == EventType.MouseUp)
-        {
-            Debug.Log("Mouse Up");
-        }
+        rootVisualElement.Add(box);
     }
 }
