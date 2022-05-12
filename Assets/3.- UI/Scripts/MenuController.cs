@@ -129,8 +129,13 @@ public class MenuController : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    public void _QuitGame()
+    public void _QuitGame(InputAction.CallbackContext context)
     {
-        Application.Quit();
+        if (context.started)
+            return;
+        else if (context.performed)
+            Application.Quit();
+        else if (context.canceled)
+            return;  
     }
 }
