@@ -229,7 +229,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 60
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -7886,7 +7886,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 60
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -7907,7 +7907,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 710407136}
-  m_LocalRotation: {x: 0.00005993739, y: 0.9962906, z: -0.0860498, w: 0.0006939592}
+  m_LocalRotation: {x: 0.000045251832, y: 0.99788743, z: -0.064963065, w: 0.00069510634}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -10868,7 +10868,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -10893,8 +10893,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390952346}
-  m_LocalRotation: {x: 0.00007251704, y: 0.9945656, z: -0.104109816, w: 0.00069275836}
-  m_LocalPosition: {x: -0.015928607, y: 7.578744, z: 11.433833}
+  m_LocalRotation: {x: 0.00006514183, y: 0.99561745, z: -0.09351694, w: 0.0006935251}
+  m_LocalPosition: {x: -0.016006611, y: 7.50504, z: 11.489655}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11586,7 +11586,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 60
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -11607,7 +11607,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1488454504}
-  m_LocalRotation: {x: 0.000072517025, y: 0.9945656, z: -0.10410981, w: 0.0006927583}
+  m_LocalRotation: {x: 0.000065141845, y: 0.99561745, z: -0.093516946, w: 0.00069352513}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -11655,7 +11655,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1473870249}
   m_CommonLens: 1
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 60
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
